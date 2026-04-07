@@ -6,7 +6,8 @@ import time
 from .config import settings
 
 #SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:1234@localhost/fastapi'
-SQLALCHEMY_DATABASE_URL = "postgres://postgres.cyqfumncgofqdwupowav:lppDOB058z1npglh@aws-1-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&supa=base-pooler.x"#f'postgresql://{settings.DATABASE_USERNAME}:{settings.DATABASE_PASSWORD}@{settings.DATABASE_HOSTNAME}:{settings.DATABASE_PORT}/{settings.DATABASE_NAME}'
+SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.DATABASE_USERNAME}:{settings.DATABASE_PASSWORD}@{settings.DATABASE_HOSTNAME}:{settings.DATABASE_PORT}/{settings.DATABASE_NAME}'
+
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 

@@ -8,6 +8,15 @@ pip install "fastapi[standard]"
 
 fastapi dev app/main.py
 
+alembic init alembic
+
+alembic revision -m "add user table"
+
+alembic upgrade head
+
+alembic revision --autogenerate -m "auto-vote"
+
+pip install -r requirements.txt
 
 A "path" is also commonly called an "endpoint" or a "route".
 

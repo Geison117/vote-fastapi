@@ -12,7 +12,6 @@ from app.config import settings
 config = context.config
 config.set_main_option("sqlalchemy.url", f"postgresql+psycopg2://{settings.DATABASE_USERNAME}:{settings.DATABASE_PASSWORD}@{settings.DATABASE_HOSTNAME}:{settings.DATABASE_PORT}/{settings.DATABASE_NAME}")
 
-#config.set_main_option("sqlalchemy.url", f"postgresql+psycopg2://postgres.cyqfumncgofqdwupowav:lppDOB058z1npglh@aws-1-us-east-1.pooler.supabase.com:5432/postgres")
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

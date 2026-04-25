@@ -1,34 +1,100 @@
-Create an Environment:
+# 🗳️ Vote FastAPI
 
-python -m venv <Name>
+Backend API desarrollada con FastAPI para gestionar un sistema de votación. Permite crear, listar y votar sobre diferentes opciones de manera eficiente y escalable.
 
-venv\Scripts\activate
+## 🚀 Características
 
-pip install "fastapi[standard]"
+* API REST construida con FastAPI
+* Validación de datos con Pydantic
+* Arquitectura modular
+* Manejo de votos en tiempo real
+* Documentación automática con Swagger/OpenAPI
+* Código limpio y fácil de extender
 
-fastapi dev app/main.py
+## 🛠️ Tecnologías
 
-alembic init alembic
+* Python 3.x
+* FastAPI
+* Uvicorn
+* Pydantic
+* (Opcional: SQLAlchemy / Base de datos si aplica)
 
-alembic revision -m "add user table"
+## 📂 Estructura del proyecto
 
-alembic upgrade head
+```bash
+vote-fastapi/
+│── app/
+│   ├── main.py          # Punto de entrada
+│   ├── models.py        # Modelos de datos
+│   ├── schemas.py       # Esquemas (Pydantic)
+│   ├── routers/         # Endpoints
+│   ├── database.py      # Configuración DB (si aplica)
+│
+│── requirements.txt
+│── README.md
+```
 
-alembic revision --autogenerate -m "auto-vote"
+## ⚙️ Instalación
 
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/Geison117/vote-fastapi.git
+cd vote-fastapi
+```
+
+2. Crea un entorno virtual:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux / Mac
+venv\Scripts\activate     # Windows
+```
+
+3. Instala dependencias:
+
+```bash
 pip install -r requirements.txt
+```
 
-A "path" is also commonly called an "endpoint" or a "route".
+## ▶️ Ejecución
 
+```bash
+uvicorn app.main:app --reload
+```
 
-@decorator Info
+Servidor disponible en:
 
-That @something syntax in Python is called a "decorator".
+```
+http://127.0.0.1:8000
+```
 
-You put it on top of a function. Like a pretty decorative hat (I guess that's where the term came from).
+## 📄 Documentación interactiva
 
-A "decorator" takes the function below and does something with it.
+FastAPI genera documentación automáticamente:
 
-In our case, this decorator tells FastAPI that the function below corresponds to the path / with an operation get.
+* Swagger UI:
+  👉 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-It is the "path operation decorator".
+* Redoc:
+  👉 [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+## 📌 Endpoints principales
+
+Ejemplo (ajusta según tu código real):
+
+* `GET /votes` → Obtener todas las votaciones
+* `POST /votes` → Crear una votación
+* `POST /votes/{id}/vote` → Votar por una opción
+* `GET /votes/{id}` → Obtener detalle de una votación
+
+## 🧪 Testing
+
+```bash
+pytest
+```
+
+## 👨‍💻 Autor
+
+* Geison Blanco
+* GitHub: [https://github.com/Geison117](https://github.com/Geison117)
